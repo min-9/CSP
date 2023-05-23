@@ -16,10 +16,11 @@ export async function GET(request) {
  */
 export async function POST(request) {
   const { answer } = await (await GET(request)).json();
-
   const bodyJson = await request.json();
 
   return new NextResponse(
-    JSON.stringify({ returnValue: bodyJson.input === answer[bodyJson.id - 1] })
+    JSON.stringify({
+      returnValue: bodyJson.input === answer[bodyJson.id - 1],
+    })
   );
 }
