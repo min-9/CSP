@@ -1,10 +1,12 @@
 'use client';
 import { useState } from 'react';
+import useTex from '@/hooks/tex';
 import InputForm from '@/components/InputForm';
-import Tex from '@/components/Tex';
 
 export default function Home() {
   const [isCorrect, setIsCorrect] = useState(false);
+  const Tex = useTex();
+
   const fibs = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
 
   /**
@@ -30,12 +32,11 @@ export default function Home() {
               style={{ border: '1px solid gray' }}
             >
               <p>
-                피보나치 수열 <Tex id="1" tex="\{F_n\}" />을 모든 자연수{' '}
-                <Tex id="2" tex="n" />에 대하여 다음과 같이 정의합니다.
+                피보나치 수열 <Tex tex="\{F_n\}" />을 모든 자연수{' '}
+                <Tex tex="n" />에 대하여 다음과 같이 정의합니다.
               </p>
               <p className="ml-8 p-4">
                 <Tex
-                  id="3"
                   tex={`
                     F_n = \\begin{cases} 
                     1 & (n \\lt 3) \\\\
@@ -45,20 +46,16 @@ export default function Home() {
                 />
               </p>
               <p>
-                <Tex id="4" tex="F_n" />을 12번째 항까지 차례대로 구하면 다음과
+                <Tex tex="F_n" />을 12번째 항까지 차례대로 구하면 다음과
                 같습니다.
               </p>
               <p className="ml-8 p-4">
                 {fibs.map((fib, index) => (
-                  <Tex
-                    key={index}
-                    id={index + 5}
-                    tex={`F_{${index + 1}} = ${fib} \\\\`}
-                  />
+                  <Tex key={index} tex={`F_{${index + 1}} = ${fib} \\\\`} />
                 ))}
               </p>
               <p className="mb-4">
-                이때 수열의 값은 <Tex id="17" tex="n = 12" />
+                이때 수열의 값은 <Tex tex="n = 12" />
                 에서 처음으로 3자리가 됩니다.
               </p>
               <p>
@@ -79,13 +76,12 @@ export default function Home() {
                 <b>피보나치 수(Fibonacci numbers)</b>
               </p>
               <p>
-                피보나치 수 <Tex id="18" tex="F_n" />은 다음과 같은 초기값 및
-                점화식으로 정의되는 수열이다.
+                피보나치 수 <Tex tex="F_n" />은 다음과 같은 초기값 및 점화식으로
+                정의되는 수열이다.
               </p>
               <Tex
-                id="19"
                 tex="F_1 = 1,\ F_2 = 1,\ F_n = F_{n-1} + F_{n-2}\ (n \in \{3, 4, 5, \dots\})"
-                displayBlock
+                block
               />
               <p>
                 피보나치 수의 처음 몇 항은 다음과 같다.
@@ -95,15 +91,14 @@ export default function Home() {
               </p>
               <p>피보나치 수의 일반항은 다음과 같다.</p>
               <Tex
-                id="20"
                 tex="F_n = {\varphi^n - (1-\varphi)^n \over \sqrt{5} }"
-                displayBlock
+                block
               />
               <p>
-                여기서 <Tex id="21" tex="\varphi" />는 황금비이며, 이 값은
-                일반적으로 1.618 정도로 알려져 있다. 이를 비네 공식(Binet's
-                formula)이라고 한다. 이는 레온하르트 오일러가 1765년 처음
-                발표했으나 잊혔다가, 1848년 자크 비네에 의해 재발견되었다.
+                여기서 <Tex tex="\varphi" />는 황금비이며, 이 값은 일반적으로
+                1.618 정도로 알려져 있다. 이를 비네 공식(Binet's formula)이라고
+                한다. 이는 레온하르트 오일러가 1765년 처음 발표했으나 잊혔다가,
+                1848년 자크 비네에 의해 재발견되었다.
               </p>
               <ul className="ml-12 list-disc list-outside">
                 <li>

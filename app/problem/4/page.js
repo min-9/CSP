@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
+import useTex from '@/hooks/tex';
 import InputForm from '@/components/InputForm';
-import Tex from '@/components/Tex';
 
 export default function Home() {
   const [isCorrect, setIsCorrect] = useState(false);
+  const Tex = useTex();
 
   /**
    * @param {boolean} state
@@ -29,32 +30,30 @@ export default function Home() {
               style={{ border: '1px solid gray' }}
             >
               <p>
-                <Tex id="1" tex="n" />의 약수들 중에서 자신을 제외한 것의 합을{' '}
-                <Tex id="2" tex="d(n)" />
+                <Tex tex="n" />의 약수들 중에서 자신을 제외한 것의 합을{' '}
+                <Tex tex="d(n)" />
                 으로 정의했을 때,
               </p>
               <p>
-                서로 다른 두 정수 <Tex id="3" tex={'a,\\ b'} />에 대하여{' '}
+                서로 다른 두 정수 <Tex tex={'a,\\ b'} />에 대하여{' '}
                 <Tex
-                  id="4"
                   tex="d(a) =
                 b"
                 />{' '}
-                이고 <Tex id="5" tex="d(b) = a" /> 이면
+                이고 <Tex tex="d(b) = a" /> 이면
               </p>
               <p className="mb-4">
-                <Tex id="6" tex="a,\ b" />는 친화쌍이라 하고{' '}
-                <Tex id="7" tex="a" />와 <Tex id="8" tex="b" />를 각각{' '}
-                <u>친화수</u>라고 합니다.
+                <Tex tex="a,\ b" />는 친화쌍이라 하고 <Tex tex="a" />와{' '}
+                <Tex tex="b" />를 각각 <u>친화수</u>라고 합니다.
               </p>
               <p>
                 예를 들어 220의 약수는 자신을 제외하면 1, 2, 4, 5, 10, 11, 20,
-                22, 44, 55, 110 이므로 그 합은 <Tex id="9" tex="d(220) = 284" />{' '}
+                22, 44, 55, 110 이므로 그 합은 <Tex tex="d(220) = 284" />{' '}
                 입니다.
               </p>
               <p>
                 또 284의 약수는 자신을 제외하면 1, 2, 4, 71, 142 이므로{' '}
-                <Tex id="10" tex="d(284) = 220" /> 입니다.
+                <Tex tex="d(284) = 220" /> 입니다.
               </p>
               <p className="mb-4">따라서 220과 284는 친화쌍이 됩니다.</p>
               <p>10000 이하의 친화수들을 모두 찾아서 그 합을 구하세요.</p>

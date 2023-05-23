@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
+import useTex from '@/hooks/tex';
 import InputForm from '@/components/InputForm';
-import Tex from '@/components/Tex';
 
 export default function Home() {
   const [isCorrect, setIsCorrect] = useState(false);
+  const Tex = useTex();
 
   /**
    * @param {boolean} state
@@ -29,10 +30,9 @@ export default function Home() {
               style={{ border: '1px solid gray' }}
             >
               <p>
-                세 자연수 <Tex id="1" tex={'a,\\ b,\\ c'} /> 가 피타고라스 정리{' '}
-                <Tex id="2" tex={'a^2 + b^2 = c^2'} /> 를 만족하면 피타고라스
-                수라고 부릅니다 (여기서 <Tex id="3" tex={'a \\lt b \\lt c'} />{' '}
-                ).
+                세 자연수 <Tex tex={'a,\\ b,\\ c'} /> 가 피타고라스 정리{' '}
+                <Tex tex={'a^2 + b^2 = c^2'} /> 를 만족하면 피타고라스 수라고
+                부릅니다 (여기서 <Tex tex={'a \\lt b \\lt c'} /> ).
               </p>
               <p className="mb-4">
                 예를 들면 <b>3</b>
@@ -41,9 +41,9 @@ export default function Home() {
                 <sup>2</sup> 이므로 3, 4, 5는 피타고라스 수입니다.
               </p>
               <p>
-                <Tex id="4" tex={'a + b + c = 1000'} /> 인 피타고라스 수{' '}
-                <Tex id="5" tex={'a,\\ b,\\ c'} />는 한 가지 뿐입니다. 이 때,{' '}
-                <Tex id="6" tex={'a \\times b \\times c'} /> 는 얼마입니까?
+                <Tex tex={'a + b + c = 1000'} /> 인 피타고라스 수{' '}
+                <Tex tex={'a,\\ b,\\ c'} />는 한 가지 뿐입니다. 이 때,{' '}
+                <Tex tex={'a \\times b \\times c'} /> 는 얼마입니까?
               </p>
             </div>
             <InputForm id={3} load={getState} />
@@ -59,27 +59,25 @@ export default function Home() {
                 <b>피타고라스 트리플(Pythagorean triple)</b>
               </p>
               <p>
-                피타고라스 정리 <Tex id="7" tex="a^2 + b^2 = c^2" />을
-                만족시키는 세 양의 정수의 튜플 <Tex id="8" tex="(a,b,c)" />
+                피타고라스 정리 <Tex tex="a^2 + b^2 = c^2" />을 만족시키는 세
+                양의 정수의 튜플 <Tex tex="(a,b,c)" />
                 이다. 즉, 유클리드 기하학의 직각 삼각형의 세 변을 이루는 세 양의
-                정수의 튜플이다. 예를 들어, <Tex id="9" tex="(3,4,5)" />는
-                피타고라스 트리플이다. 원시(primitive) 피타고라스 트리플은
-                피타고라스 트리플을 이루는 세 수가 서로소인 경우이다.
+                정수의 튜플이다. 예를 들어, <Tex tex="(3,4,5)" />는 피타고라스
+                트리플이다. 원시(primitive) 피타고라스 트리플은 피타고라스
+                트리플을 이루는 세 수가 서로소인 경우이다.
               </p>
               <p>
-                피타고라스 트리플은 항상{' '}
-                <Tex id="10" tex="(m^2−n^2,2mn,m^2+n^2)" />{' '}
-                <Tex id="11" tex="(m>n>0)" /> 꼴이다. 이러한 꼴이 원시
-                피타고라스 트리플일 필요 충분 조건은 <Tex id="12" tex="m,n" />이
-                짝수를 포함하는 서로소 정수인 것이다. 특히,{' '}
-                <Tex id="13" tex="(m^2−1,2m,m^2+1)" />은 항상 피타고라스
-                트리플이다. 여기서{' '}
-                <Tex id="14" tex="a = m^2−n^2,b = 2mn,c=m^2+n^2" />
+                피타고라스 트리플은 항상 <Tex tex="(m^2−n^2,2mn,m^2+n^2)" />{' '}
+                <Tex tex="(m>n>0)" /> 꼴이다. 이러한 꼴이 원시 피타고라스
+                트리플일 필요 충분 조건은 <Tex tex="m,n" />이 짝수를 포함하는
+                서로소 정수인 것이다. 특히, <Tex tex="(m^2−1,2m,m^2+1)" />은
+                항상 피타고라스 트리플이다. 여기서{' '}
+                <Tex tex="a = m^2−n^2,b = 2mn,c=m^2+n^2" />
                 관계는 피타고라스 트리플을 구하는 프로그래밍에서 매우 유용하게
                 사용된다.
               </p>
               <p>
-                원시 피타고라스 트리플은 <Tex id="15" tex="(3,4,5)" />
+                원시 피타고라스 트리플은 <Tex tex="(3,4,5)" />
                 로부터 시작하여 아래 세 행렬을 곱하여 얻어낼 수도 있다.
               </p>
               <Tex
@@ -100,7 +98,7 @@ export default function Home() {
                   2 & 2 & 3
                 \\end{pmatrix}
                 `}
-                displayBlock
+                block
               />
               <ul className="ml-12 list-disc list-outside">
                 <li>
