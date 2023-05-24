@@ -63,7 +63,7 @@ export default function Home() {
               }}
             >
               <p>
-                <b>태양력의 윤년(leap 연도)</b>
+                <b>태양력의 윤년(Leap year)</b>
               </p>
 
               <p>
