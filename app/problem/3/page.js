@@ -46,7 +46,7 @@ export default function Home() {
                 <Tex tex={'a \\times b \\times c'} /> 는 얼마입니까?
               </p>
             </div>
-            <InputForm id={3} load={getState} />
+            <InputForm id={3} type="number" load={getState} />
 
             <div
               className="flex justify-center w-full flex-col p-6 mt-10 gap-4"

@@ -63,7 +63,7 @@ export default function Home() {
                 항입니까?
               </p>
             </div>
-            <InputForm id={5} load={getState} />
+            <InputForm id={5} type="number" load={getState} />
 
             <div
               className="flex justify-center w-full flex-col p-6 mt-10 gap-4"

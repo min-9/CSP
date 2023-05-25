@@ -1,6 +1,5 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { NextResponse } from 'next/server';
 import { useRef, useState } from 'react';
 
 /**
@@ -18,10 +17,7 @@ import { useRef, useState } from 'react';
  * @param {InputProps} props
  * @returns
  */
-export default function InputForm({ id, load }) {
-  /**
-   * @type {import('react').MutableRefObject<HTMLInputElement>}
-   */
+export default function InputForm({ id, type, load }) {
   const inputRef = useRef(null);
 
   const [input, setInput] = useState(null);
@@ -31,7 +27,6 @@ export default function InputForm({ id, load }) {
   const router = useRouter();
 
   const callAPI = async () => {
-    /** @type {NextResponse} */
     const response = await fetch('/api/prob', {
       method: 'POST',
       body: JSON.stringify({
@@ -60,7 +55,7 @@ export default function InputForm({ id, load }) {
         </label>
         <input
           className="bg-white rounded border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          type="number"
+          type={type ?? 'text'}
           ref={inputRef}
           onChange={e => {
             if (!e.target.value) setDisable('opacity-50 cursor-not-allowed');

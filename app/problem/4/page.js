@@ -58,7 +58,7 @@ export default function Home() {
               <p className="mb-4">따라서 220과 284는 친화쌍이 됩니다.</p>
               <p>10000 이하의 친화수들을 모두 찾아서 그 합을 구하세요.</p>
             </div>
-            <InputForm id={4} load={getState} />
+            <InputForm id={4} type="number" load={getState} />
 
             <div
               className="flex justify-center w-full flex-col p-6 mt-10 gap-4"

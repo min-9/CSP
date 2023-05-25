@@ -39,7 +39,7 @@ export default function Home() {
                 <b>600851475143</b>의 소인수 중에서 가장 큰 수를 구하세요.
               </p>
             </div>
-            <InputForm id={1} load={getState} />
+            <InputForm id={1} type="number" load={getState} />
 
             <div
               className="flex justify-center w-full flex-col p-6 mt-10 gap-4"

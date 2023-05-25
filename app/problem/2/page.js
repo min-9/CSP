@@ -53,7 +53,7 @@ export default function Home() {
                 일요일인 경우는 총 몇 번입니까?
               </p>
             </div>
-            <InputForm id={2} load={getState} />
+            <InputForm id={2} type="number" load={getState} />
 
             <div
               className="flex justify-center w-full flex-col p-6 mt-10 gap-4"

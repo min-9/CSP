@@ -37,7 +37,7 @@ export default function Home() {
               </p>
               <p>(주의: 첫번째 자리가 0이면 대칭수가 아님)</p>
             </div>
-            <InputForm id={6} load={getState} />
+            <InputForm id={6} type="number" load={getState} />
 
             <div
               className="flex justify-center w-full flex-col p-6 mt-10 gap-4"
