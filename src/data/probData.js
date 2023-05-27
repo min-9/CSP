@@ -64,14 +64,14 @@ export const probData = [
     level: 'Lv. 1',
     url: '/problem/2',
     tags: ['달력'],
-    Description: ({ Tex }) => (
+    Description: ({ style, Tex }) => (
       <>
         <p className="mb-4">
           다음은 달력에 관한 몇 가지 일반적인 정보입니다 (필요한 경우 좀 더
           연구를 해 보셔도 좋습니다).
         </p>
 
-        <ul className="mb-4 ml-12 list-disc list-outside">
+        <ul className={style.ul}>
           <li>1900년 1월 1일은 월요일이다.</li>
           <li>
             4월, 6월, 9월, 11월은 30일까지 있고, 1월, 3월, 5월, 7월, 8월, 10월,
@@ -93,7 +93,7 @@ export const probData = [
         </p>
       </>
     ),
-    Info: ({ Tex }) => (
+    Info: ({ style, Tex }) => (
       <>
         <p>
           <b>태양력의 윤년(Leap year)</b>
@@ -154,7 +154,7 @@ export const probData = [
           </code>
         </p>
 
-        <ul className="ml-12 list-disc list-outside">
+        <ul className={style.ul}>
           <li>
             위키백과,{' '}
             <a
@@ -182,7 +182,7 @@ export const probData = [
     level: 'Lv. 1',
     url: '/problem/3',
     tags: ['피타고라스'],
-    Description: ({ Tex }) => (
+    Description: ({ style, Tex }) => (
       <>
         <p>
           세 자연수 <Tex tex={'a,\\ b,\\ c'} /> 가 피타고라스 정리{' '}
@@ -202,7 +202,7 @@ export const probData = [
         </p>
       </>
     ),
-    Info: ({ Tex }) => (
+    Info: ({ style, Tex }) => (
       <>
         <p>
           <b>피타고라스 트리플(Pythagorean triple)</b>
@@ -249,7 +249,7 @@ export const probData = [
           `}
           block
         />
-        <ul className="ml-12 list-disc list-outside">
+        <ul className={style.ul}>
           <li>
             위키백과,{' '}
             <a
@@ -277,7 +277,7 @@ export const probData = [
     level: 'Lv. 1',
     url: '/problem/4',
     tags: ['친화수'],
-    Description: ({ Tex }) => (
+    Description: ({ style, Tex }) => (
       <>
         <p>
           <Tex tex="n" />의 약수들 중에서 자신을 제외한 것의 합을{' '}
@@ -308,7 +308,7 @@ export const probData = [
         <p>10000 이하의 친화수들을 모두 찾아서 그 합을 구하세요.</p>
       </>
     ),
-    Info: ({ Tex }) => (
+    Info: ({ style, Tex }) => (
       <>
         <p>
           <b>친화수(amicable numbers)</b>
@@ -328,7 +328,7 @@ export const probData = [
           이상이다.
         </p>
 
-        <ul className="ml-12 list-disc list-outside">
+        <ul className={style}>
           <li>
             위키백과,{' '}
             <a
@@ -362,7 +362,7 @@ export const probData = [
     level: 'Lv. 1',
     url: '/problem/5',
     tags: ['피보나치', '수열'],
-    Description: ({ Tex }) => (
+    Description: ({ style, Tex }) => (
       <>
         <p>
           피보나치 수열 <Tex tex="\{F_n\}" />을 모든 자연수 <Tex tex="n" />에
@@ -395,7 +395,7 @@ export const probData = [
         </p>
       </>
     ),
-    Info: ({ Tex }) => (
+    Info: ({ style, Tex }) => (
       <>
         <p>
           <b>피보나치 수(Fibonacci numbers)</b>
@@ -422,7 +422,7 @@ export const probData = [
           레온하르트 오일러가 1765년 처음 발표했으나 잊혔다가, 1848년 자크
           비네에 의해 재발견되었다.
         </p>
-        <ul className="ml-12 list-disc list-outside">
+        <ul className={style.ul}>
           <li>
             위키백과,{' '}
             <a
@@ -447,7 +447,7 @@ export const probData = [
     level: 'Lv. 1',
     url: '/problem/6',
     tags: ['대칭수'],
-    Description: ({ Tex }) => (
+    Description: ({ style, Tex }) => (
       <>
         <p className="mb-4">
           대칭수(palindrome)인 585는 2진수로 나타내도 1001001001
@@ -459,7 +459,7 @@ export const probData = [
         <p>(주의: 첫번째 자리가 0이면 대칭수가 아님)</p>
       </>
     ),
-    Info: ({ Tex }) => (
+    Info: ({ style, Tex }) => (
       <>
         <p>
           <b>대칭수(palindrome)</b>
@@ -471,7 +471,7 @@ export const probData = [
           다룬다. 예로 0, 1, 14641, 104060401, 1004006004001, ...은 네 제곱인
           대칭수이다. 회문수(回文數)라고도 한다.
         </p>
-        <ul className="ml-12 list-disc list-outside">
+        <ul className={style.ul}>
           <li>
             위키백과,{' '}
             <a
