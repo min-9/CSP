@@ -61,7 +61,7 @@ export default ({ id }) => {
           404
         </h1>
         <div
-          className="bg-red-800 px-2 text-sm text-white rounded mb-28 mr-3 absolute"
+          className="bg-red-600 px-2 text-sm text-white rounded mb-28 mr-3 absolute"
           style={{ transform: 'rotate(12deg)' }}
         >
           Page Not Found
