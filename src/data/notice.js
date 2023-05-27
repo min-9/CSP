@@ -1,7 +1,7 @@
 export const notice = [
   {
     category: 'UPDATE',
-    date: 'MAY 23, 2023',
+    date: 'MAY 16, 2023',
     title: 'UI 개선 및 문제 추가',
     description: ['반응형 UI 적용과 함께 새로운 문제를 추가했습니다.'],
   },

@@ -1,11 +1,8 @@
-'use client';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
 
-export default function Page({ params }) {
+export default function Page({ params, searchParams }) {
   const { id } = params;
-  const searchParams = useSearchParams();
-  const input = searchParams.get('input');
+  const { input } = searchParams;
 
   return (
     <main className="flex flex-col items-center justify-between p-12">

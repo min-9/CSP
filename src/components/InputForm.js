@@ -5,7 +5,13 @@ import { useRef, useState } from 'react';
 /**
  * @typedef InputProps
  * @prop {number} id
+ * @prop {string} type
  * @prop {(state: boolean) => void} load
+ */
+
+/**
+ * @typedef State
+ * @prop {boolean} isCorrect
  */
 
 /**
@@ -23,6 +29,7 @@ export default function InputForm({ id, type, load }) {
   const [input, setInput] = useState(null);
   const [isCorrect, setIsCorrect] = useState(false);
   const [disable, setDisable] = useState('opacity-50 cursor-not-allowed');
+  const [isDisable, setIsDisable] = useState(true);
 
   const router = useRouter();
 
@@ -39,6 +46,7 @@ export default function InputForm({ id, type, load }) {
     const { returnValue } = await response.json();
 
     load(returnValue);
+
     if (returnValue) {
       setInput(+inputRef.current.value);
       setIsCorrect(prev => !prev);
@@ -58,18 +66,26 @@ export default function InputForm({ id, type, load }) {
           type={type ?? 'text'}
           ref={inputRef}
           onChange={e => {
-            if (!e.target.value) setDisable('opacity-50 cursor-not-allowed');
-            else setDisable('');
+            if (!e.target.value) {
+              setIsDisable(true);
+              setDisable('opacity-50 cursor-not-allowed');
+            } else {
+              setIsDisable(false);
+              setDisable('hover:bg-blue-600');
+            }
           }}
-          style={{ display: isCorrect ? 'none' : 'flex' }}
+          style={{
+            display: isCorrect ? 'none' : 'flex',
+          }}
         />
       </div>
       <button
-        className={`flex mx-auto mt-8 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg ${disable}`}
+        className={`flex mx-auto mt-8 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none rounded text-lg ${disable}`}
         onClick={callAPI}
         style={{
           display: isCorrect ? 'none' : 'flex',
         }}
+        disabled={isDisable}
       >
         답안 제출
       </button>

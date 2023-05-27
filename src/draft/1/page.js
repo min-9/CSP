@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import InputForm from '@/components/InputForm';
+import Navigation from '@/components/Navigation';
 
 export default function Home() {
   const [isCorrect, setIsCorrect] = useState(false);
@@ -17,12 +18,17 @@ export default function Home() {
       <div className="container mx-auto">
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-6 mx-auto">
-            <p className="text-xl">
-              <b>가장 큰 소인수</b>
-            </p>
-            <p className="mb-4">
-              <small>Problem 1</small>
-            </p>
+            <div className="flex">
+              <div className="w-1/2">
+                <p className="text-xl">
+                  <b>가장 큰 소인수</b>
+                </p>
+                <p className="mb-4">
+                  <small>Problem 1</small>
+                </p>
+              </div>
+              <Navigation id={1} />
+            </div>
             <div
               className="w-full p-6 mb-12"
               style={{ border: '1px solid gray' }}

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import InputForm from '@/components/InputForm';
+import Navigation from '@/components/Navigation';
 
 export default function Home() {
   const [isCorrect, setIsCorrect] = useState(false);
@@ -17,12 +18,17 @@ export default function Home() {
       <div className="container mx-auto">
         <section className="text-gray-600 body-font">
           <div className="container px-5 py-6 mx-auto">
-            <p className="text-xl">
-              <b>20세기의 매월 1일</b>
-            </p>
-            <p className="mb-4">
-              <small>Problem 2</small>
-            </p>
+            <div className="flex">
+              <div className="w-1/2">
+                <p className="text-xl">
+                  <b>20세기의 매월 1일</b>
+                </p>
+                <p className="mb-4">
+                  <small>Problem 2</small>
+                </p>
+              </div>
+              <Navigation id={2} />
+            </div>
             <div
               className="w-full p-6 mb-12"
               style={{ border: '1px solid gray' }}
@@ -144,7 +150,7 @@ export default function Home() {
                     className="hover:opacity-50"
                     href="https://en.wikipedia.org/wiki/Leap_연도#Algorithm"
                   >
-                    leap 연도
+                    leap year
                   </a>
                 </li>
               </ul>

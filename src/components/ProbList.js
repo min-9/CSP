@@ -1,10 +1,10 @@
 import Prob from '@/components/Prob';
-import { prob } from '@/data/prob';
+import { probData } from '@/data/probData';
 
 export default function ProbList() {
   return (
     <div className="flex flex-wrap -m-4">
-      {prob.map((props, index) => (
+      {probData.map((props, index) => (
         <Prob key={index} {...props} />
       ))}
     </div>
