@@ -42,7 +42,6 @@ export default ({ id }) => {
           <Description Tex={Tex} />
         </div>
         <InputForm id={id} type="number" load={getState} />
-
         <div
           className="flex justify-center w-full flex-col p-6 mt-10 gap-4"
           style={{
@@ -50,7 +49,7 @@ export default ({ id }) => {
             display: isCorrect ? 'flex' : 'none',
           }}
         >
-          <Info Tex={Tex} />
+          <Info Tex={Tex} style={{ ul: 'ml-12 list-disc list-outside' }} />
         </div>
       </>
     );
