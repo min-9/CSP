@@ -56,8 +56,10 @@ export default function InputForm({ id, type, load }) {
     load(returnValue);
 
     if (returnValue) {
-      dispatch({ input: +inputRef.current.value });
-      dispatch({ isCorrect: !isCorrect });
+      dispatch({
+        input: +inputRef.current.value,
+        isCorrect: !isCorrect,
+      });
     } else {
       router.push(`/submit_answer/${id}?input=${+inputRef.current.value}`);
     }
