@@ -1,5 +1,5 @@
 import Prob from '@/components/Prob';
-import { probData } from '@/data/probData';
+import { probData } from '@/data/prob';
 
 export default function ProbList() {
   return (

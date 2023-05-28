@@ -71,7 +71,7 @@ export const probData = [
           연구를 해 보셔도 좋습니다).
         </p>
 
-        <ul className={style.ul}>
+        <ul className={`mb-4 ${style.ul}`}>
           <li>1900년 1월 1일은 월요일이다.</li>
           <li>
             4월, 6월, 9월, 11월은 30일까지 있고, 1월, 3월, 5월, 7월, 8월, 10월,

@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useRef, useState } from 'react';
+import { useReducer, useRef } from 'react';
 
 /**
  * @typedef InputProps
@@ -19,6 +19,15 @@ import { useRef, useState } from 'react';
  * @prop {boolean} returnValue
  */
 
+const initState = {
+  input: null,
+  isCorrect: false,
+  disable: 'opacity-50 cursor-not-allowed',
+  isDisable: true,
+};
+
+const reducer = (state, action) => ({ ...state, ...action });
+
 /**
  * @param {InputProps} props
  * @returns
@@ -26,10 +35,9 @@ import { useRef, useState } from 'react';
 export default function InputForm({ id, type, load }) {
   const inputRef = useRef(null);
 
-  const [input, setInput] = useState(null);
-  const [isCorrect, setIsCorrect] = useState(false);
-  const [disable, setDisable] = useState('opacity-50 cursor-not-allowed');
-  const [isDisable, setIsDisable] = useState(true);
+  const [state, dispatch] = useReducer(reducer, initState);
+
+  const { input, isCorrect, disable, isDisable } = state;
 
   const router = useRouter();
 
@@ -48,8 +56,8 @@ export default function InputForm({ id, type, load }) {
     load(returnValue);
 
     if (returnValue) {
-      setInput(+inputRef.current.value);
-      setIsCorrect(prev => !prev);
+      dispatch({ input: +inputRef.current.value });
+      dispatch({ isCorrect: !isCorrect });
     } else {
       router.push(`/submit_answer/${id}?input=${+inputRef.current.value}`);
     }
@@ -66,13 +74,19 @@ export default function InputForm({ id, type, load }) {
           type={type ?? 'text'}
           ref={inputRef}
           onChange={e => {
+            let action;
             if (!e.target.value) {
-              setIsDisable(true);
-              setDisable('opacity-50 cursor-not-allowed');
+              action = {
+                isDisable: true,
+                disable: 'opacity-50 cursor-not-allowed',
+              };
             } else {
-              setIsDisable(false);
-              setDisable('hover:bg-blue-600');
+              action = {
+                isDisable: false,
+                disable: 'hover:bg-blue-600',
+              };
             }
+            dispatch(action);
           }}
           style={{
             display: isCorrect ? 'none' : 'flex',

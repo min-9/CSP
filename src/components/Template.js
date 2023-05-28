@@ -5,7 +5,7 @@ import useTex from '@/hooks/tex';
 import InputForm from '@/components/InputForm';
 import Navigation from '@/components/Navigation';
 import Error from '@/components/error/Error';
-import { probData } from '@/data/probData';
+import { probData } from '@/data/prob';
 
 /**
  * @typedef TemplateProps
