@@ -25,13 +25,13 @@ export default function Header() {
           </span>
         </a>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <Link className="mr-10 hover:text-gray-900" href={'/'}>
+          <Link className="mr-10 hover:text-gray-900" href="/">
             홈
           </Link>
-          <Link className="mr-10 hover:text-gray-900" href={'/prob_list'}>
+          <Link className="mr-10 hover:text-gray-900" href="/prob_list">
             문제 목록
           </Link>
-          <Link className="hover:text-gray-900" href={'/notice'}>
+          <Link className="hover:text-gray-900" href="/notice">
             공지
           </Link>
         </nav>

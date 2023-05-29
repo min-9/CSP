@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 import { useState } from 'react';
 import useTex from '@/hooks/tex';
 import InputForm from '@/components/InputForm';
