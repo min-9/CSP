@@ -111,9 +111,10 @@ export const probData = [
         <p>
           그레고리력의 정확한 윤년 규칙을 알고리즘으로 표현하면 다음과 같다.
           <code
-            className="block text-sm w-full p-6 rounded-md"
+            className="block text-sm w-full p-6"
             style={{
               backgroundColor: 'rgb(41, 45, 62)',
+              borderRadius: '0.375rem',
               color: 'rgb(166, 172, 205)',
             }}
           >
